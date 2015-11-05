@@ -113,7 +113,7 @@ class PyOpenFecApiPaginatedClass(PyOpenFecApiClass):
         if initial_results.get('pagination', None):
             if initial_results['pagination'].get('pages', None):
                 if initial_results['pagination']['pages'] > 1:
-                    current_page = 2
+                    current_page = kwargs.get('page', 2)
 
                     while current_page <= initial_results['pagination']['pages']:
                         params = dict(kwargs)
